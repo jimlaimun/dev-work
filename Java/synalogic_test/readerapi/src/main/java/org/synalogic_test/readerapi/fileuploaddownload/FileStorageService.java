@@ -21,6 +21,8 @@ public class FileStorageService {
     
     @Autowired
     public FileStorageService(FileStorageProperties fileStorageProperties) {
+        fileStorageProperties.setUploadDir(System.getProperty("user.dir")+"/uploads/");
+
         this.fileLocation = Paths.get(fileStorageProperties.getUploadDir())
         .toAbsolutePath().normalize();
 
