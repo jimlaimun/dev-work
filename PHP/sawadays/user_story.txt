@@ -1,0 +1,25 @@
+idea is user adds user via form  calling the rest api
+
+payload looking similar to  .../session
+{
+    name =>[
+        {name:david},
+        {name:bob},
+        {name:Kat},
+        ...
+}
+
+response give is either 400 bad request or 200 and 
+{
+    session:{
+        Id: 123
+    }
+}
+
+then user can perform a get request like  .../user
+response being
+{
+    Participant:{
+        name: david
+    }
+}
